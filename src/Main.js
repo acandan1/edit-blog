@@ -16,11 +16,10 @@ const Main = (props) => {
         fetch('https://old-lake-2938.fly.dev/blog/posts', requestOptions)
             .then(response => response.json())
             .then((data) => {
-                console.log(data.result);
                 setData(data.result);
             })
             .catch((err) => {
-                console.log("failure fetching data");
+                alert("failure fetching data");
             });
     }
 

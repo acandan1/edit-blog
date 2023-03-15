@@ -17,7 +17,6 @@ const Login = (props) => {
         fetch('https://old-lake-2938.fly.dev/auth', requestOptions)
             .then(response => response.json())
             .then((data) => {
-                console.log(data.token);
                 if (data.user === false) {
                     alert("Try again!");
                 } else {

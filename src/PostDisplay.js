@@ -16,11 +16,10 @@ const PostDisplay = () => {
         fetch(`https://old-lake-2938.fly.dev/blog/posts/${id}`, requestOptions)
             .then(response => response.json())
             .then((data) => {
-                console.log(data.result);
                 setData(data.result);
             })
             .catch((err) => {
-                console.log("failure fetching data");
+                alert("Failure fetching data!");
             });
     }
 
@@ -42,7 +41,6 @@ const PostDisplay = () => {
 
     useEffect(() => {
         if (data === "") {
-            console.log('hey');
             getPost();
             setToken(localStorage.getItem("token"));
             if (localStorage.getItem('token') === "") {
